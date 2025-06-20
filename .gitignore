@@ -29,8 +29,7 @@ coverage/
 dist/
 build/
 
-# Docker
-.dockerignore/
+
 
 # Optional test configs
 jest.config.js
