@@ -36,13 +36,14 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 20px;
 }
 
 .auth-box {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    padding: 30px;
     text-align: center;
     width: 100%;
     max-width: 400px;
@@ -88,6 +89,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .booking-container {
@@ -152,7 +155,7 @@ body {
 /* Room Grid */
 .room-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 
@@ -186,7 +189,6 @@ body {
     background-color: var(--available-color);
 }
 
-
 .room.booked .room-status-indicator {
     background-color: var(--booked-color) !important;
 }
@@ -218,4 +220,38 @@ body {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
+}
+
+/* ========================
+   ✅ Responsive Layout
+=========================== */
+
+@media (max-width: 768px) {
+    .booking-container {
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .auth-box {
+        padding: 20px;
+    }
+
+    .room-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .form-group input,
+    .form-group textarea,
+    #search-btn {
+        font-size: 15px;
+    }
+
+    .auth-btn {
+        font-size: 16px;
+    }
 }
