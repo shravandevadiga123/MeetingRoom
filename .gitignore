@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+ca.pem  # Aiven SSL cert
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Test output
+coverage/
+*.lcov
+*.xml
+*.json/
+
+# Build output
+dist/
+build/
+
+# Docker
+.dockerignore/
+
+# Optional test configs
+jest.config.js

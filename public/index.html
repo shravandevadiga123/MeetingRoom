@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Room Booking</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- Signup Page -->
+    <div id="signup-page" class="page">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h1>Sign Up</h1>
+                <form id="signup-form">
+                    <div class="input-group">
+                        <input type="email" id="signup-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="signup-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Register</button>
+                    <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="page active">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h1>Meeting Room Booking</h1>
+                <form id="login-form">
+                    <div class="input-group">
+                        <input type="email" id="login-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Login</button>
+                    <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="page">
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Room Booker</h2>
+            </div>
+            <a href="#" id="logout-link">Logout</a>
+        </nav>
+
+        <div class="booking-container">
+            <h1>Book a Meeting Room</h1>
+            
+            <!-- Booking Form -->
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="booking-date">Select Date:</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-time">Select Time:</label>
+                    <input type="time" id="booking-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-purpose">Purpose:</label>
+                    <textarea id="booking-purpose" placeholder="Enter purpose" required></textarea>
+                </div>
+            </div>
+
+            <!-- Room Grid -->
+            <div class="room-grid">
+                <div class="room" data-room-id="1">
+                    <h3>Room A</h3>
+                    <div class="room-status-indicator"></div>
+                    <p>Capacity: 6 persons</p>
+                </div>
+                <div class="room" data-room-id="2">
+                    <h3>Room B</h3>
+                    <div class="room-status-indicator"></div>
+                    <p>Capacity: 10 persons</p>
+                </div>
+                <div class="room" data-room-id="3">
+                    <h3>Room C</h3>
+                    <div class="room-status-indicator"></div>
+                    <p>Capacity: 12 persons</p>
+                </div>
+                <div class="room" data-room-id="4">
+                    <h3>Room D</h3>
+                    <div class="room-status-indicator"></div>
+                    <p>Capacity: 15 persons</p>
+                </div>
+                <div class="room" data-room-id="5">
+                    <h3>Room E</h3>
+                    <div class="room-status-indicator"></div>
+                    <p>Capacity: 18 persons</p>
+                </div>
+                <div class="room" data-room-id="6">
+                    <h3>Room F</h3>
+                    <div class="room-status-indicator"></div>
+                    <p>Capacity: 20 persons</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Search Section -->
+        <div class="booking-container">
+            <h2>View Bookings</h2>
+            <div class="form-group">
+                <label for="view-booking-date">Select Date:</label>
+                <input type="date" id="view-booking-date" required>
+                <button id="fetch-bookings-btn" class="auth-btn">Fetch Bookings</button>
+            </div>
+            <ul id="booking-list"></ul>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

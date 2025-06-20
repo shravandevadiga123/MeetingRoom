@@ -1,0 +1,221 @@
+:root {
+    --primary-color: #3474db;
+    --secondary-color: #2c3e50;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --available-color: #2ecc71;
+    --booked-color: #e74c3c;
+    --accent-color: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ===== Login & Signup Page Styles ===== */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.auth-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box h1 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.auth-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ===== Dashboard & Booking Form ===== */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Booking Form */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* ✅ Search Button */
+#search-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#search-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Room Grid */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.room {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.room:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.room-status-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--available-color);
+}
+
+
+.room.booked .room-status-indicator {
+    background-color: var(--booked-color) !important;
+}
+
+/* ✅ View Bookings Section */
+.booking-list-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#booking-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#booking-list li {
+    background: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#logout-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
