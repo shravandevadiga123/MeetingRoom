@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting Room Booking</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
 
@@ -53,7 +52,10 @@
             <div class="logo">
                 <h2>Room Booker</h2>
             </div>
-            <a href="#" id="logout-link">Logout</a>
+            <div class="nav-links">
+                <a href="#" id="about-link">About Us</a>
+                <a href="#" id="logout-link">Logout</a>
+            </div>
         </nav>
 
         <div class="booking-container">
@@ -120,11 +122,46 @@
             </div>
             <ul id="booking-list"></ul>
         </div>
+    </div>
 
+    <!-- About Page -->
+    <div id="about-page" class="page">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h1>About Room Booker</h1>
+                <p>This app allows you to easily book meeting rooms in your office and check availability.</p>
+                <ul>
+                    <li>📅 Choose a date and time</li>
+                    <li>🏢 Select a room that fits your team</li>
+                    <li>✍️ Enter the purpose and submit</li>
+                </ul>
+                <p>Created to simplify room scheduling and improve productivity.</p>
+                <button id="back-to-dashboard" class="auth-btn">Back to Dashboard</button>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="app.js"></script>
+    <script>
+        // Navigation between pages
+        const pages = {
+            login: document.getElementById('login-page'),
+            signup: document.getElementById('signup-page'),
+            dashboard: document.getElementById('dashboard-page'),
+            about: document.getElementById('about-page')
+        };
 
+        function showPage(pageName) {
+            Object.values(pages).forEach(p => p.classList.remove('active'));
+            pages[pageName].classList.add('active');
+        }
+
+        document.getElementById('show-signup').onclick = () => showPage('signup');
+        document.getElementById('show-login').onclick = () => showPage('login');
+        document.getElementById('logout-link').onclick = () => showPage('login');
+        document.getElementById('about-link').onclick = () => showPage('about');
+        document.getElementById('back-to-dashboard').onclick = () => showPage('dashboard');
+    </script>
+    <script src="app.js"></script>
 </body>
 </html>
