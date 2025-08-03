@@ -20,7 +20,7 @@ A simple and efficient web application for booking meeting rooms in an office en
 ## Live Demo
 
 Check out the live app here:  
-[https://meetingroom-h45h.onrender.com](https://meetingroom-h45h.onrender.com)
+[https://meetingroom-h45h.onrender.com](https://meetingroom-fa9y.onrender.com)
 
 ## Getting Started (Local Setup)
 
